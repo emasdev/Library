@@ -1,10 +1,25 @@
 import myLibrary from "./library.js";
 import Book from "./book.js";
 import { renderBooks } from "./helper.js";
+
+/* container */
+
 const library = document.createElement('div');
 document.getElementsByTagName('body')[0].appendChild(library)
+library.classList.add('flex','flex-row','h-screen')
+
 const bookTable = document.createElement("div");
+bookTable.classList.add('flex-1','pt-20','grid','md:grid-cols-3','grid-col-2','row-span-3')
+
+const info = document.createElement('aside')
+info.classList.add('border-l-2','w-1/4','pt-20')
+info.innerHTML="<h3 class='text-center'>Information</h3>"
+
+
 library.appendChild(bookTable);
+library.appendChild(info);
+// ----------------
+
 
 /* modal elements */
 
