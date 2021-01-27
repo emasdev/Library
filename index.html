@@ -9,11 +9,24 @@
 
 <body>
   <div class="container" id='library_container'>
-    
+
   </div>
 
-  <script src="scripts/library.js"></script>
-  <script src="scripts/main.js"></script>
+  <form id="add-book-form">
+    <label for="title">Title:</label><br>
+    <input type="text" id="title" name="title"><br>
+    <label for="author">Author:</label><br>
+    <input type="text" id="author" name="author"><br>
+    <label for="genre">Genre:</label><br>
+    <input type="text" id="genre" name="genre"><br>
+    <label for="src">Img url:</label><br>
+    <input type="text" id="src" name="src"><br>
+    <input type="button" value="Add Book" id="add-book-btn">
+  </form>
+
+  <script src="scripts/book.js" type="module"></script>
+  <script src="scripts/library.js" type="module"></script>
+  <script src="scripts/main.js" type="module"></script>
 </body>
 
 </html>
