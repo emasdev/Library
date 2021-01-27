@@ -1,326 +1,191 @@
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="build/styles.css" />
-    <title>Library</title>
-  </head>
 
-  <body>
-    <!-- header -->
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="build/styles.css" />
+  <title>Library</title>
+</head>
 
-    <!-- This example requires Tailwind CSS v2.0+ -->
-    <nav class="bg-gray-800">
-      <div class="max-w-7xl mx-auto px-2 sm:px-6 lg:px-8">
-        <div class="relative flex items-center justify-between">
-          <div class="absolute inset-y-0 left-0 flex items-center sm:hidden">
-            <!-- Mobile menu button-->
-            <button
-              class="inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-white hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white"
-              aria-expanded="false"
-            >
-              <span class="sr-only">Open main menu</span>
-              <!-- Icon when menu is closed. -->
-              <!--
+<body>
+  <!-- header -->
+
+  <!-- This example requires Tailwind CSS v2.0+ -->
+  <nav class="bg-gray-800">
+    <div class="max-w-7xl mx-auto px-2 sm:px-6 lg:px-8">
+      <div class="relative flex items-center justify-between">
+        <div class="absolute inset-y-0 left-0 flex items-center sm:hidden">
+          <!-- Mobile menu button-->
+          <button
+            class="inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-white hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white"
+            aria-expanded="false">
+            <span class="sr-only">Open main menu</span>
+            <!-- Icon when menu is closed. -->
+            <!--
             Heroicon name: menu
 
             Menu open: "hidden", Menu closed: "block"
           -->
-              <svg
-                class="block h-6 w-6"
-                xmlns="http://www.w3.org/2000/svg"
-                fill="none"
-                viewBox="0 0 24 24"
-                stroke="currentColor"
-                aria-hidden="true"
-              >
-                <path
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  stroke-width="2"
-                  d="M4 6h16M4 12h16M4 18h16"
-                />
-              </svg>
-              <!-- Icon when menu is open. -->
-              <!--
+            <svg class="block h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+              stroke="currentColor" aria-hidden="true">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+            </svg>
+            <!-- Icon when menu is open. -->
+            <!--
             Heroicon name: x
 
             Menu open: "block", Menu closed: "hidden"
           -->
-              <svg
-                class="hidden h-6 w-6"
-                xmlns="http://www.w3.org/2000/svg"
-                fill="none"
-                viewBox="0 0 24 24"
-                stroke="currentColor"
-                aria-hidden="true"
-              >
-                <path
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  stroke-width="2"
-                  d="M6 18L18 6M6 6l12 12"
-                />
-              </svg>
-            </button>
+            <svg class="hidden h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+              stroke="currentColor" aria-hidden="true">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+            </svg>
+          </button>
+        </div>
+        <div class="flex-1 flex items-center justify-center sm:items-stretch sm:justify-start">
+          <div class="flex-shrink-0 flex items-center">
+            <img class="block lg:hidden h-8 w-auto" src="logo.png" alt="Workflow" />
+            <img class="hidden lg:block h-8 w-auto" src="logo.png" alt="Workflow" />
           </div>
-          <div
-            class="flex-1 flex items-center justify-center sm:items-stretch sm:justify-start"
-          >
-            <div class="flex-shrink-0 flex items-center">
-              <img
-                class="block lg:hidden h-8 w-auto"
-                src="logo.png"
-                alt="Workflow"
-              />
-              <img
-                class="hidden lg:block h-8 w-auto"
-                src="logo.png"
-                alt="Workflow"
-              />
-            </div>
-            <div class="hidden sm:block sm:ml-6">
-              <div class="flex space-x-4">
-                <!-- Current: "bg-gray-900 text-white", Default: "text-gray-300 hover:bg-gray-700 hover:text-white" -->
-                <a
-                  href="#"
-                  class="bg-gray-900 text-white px-3 py-2 rounded-md text-sm font-medium"
-                  >Dashboard</a
-                >
-                <a
-                  href="#"
-                  class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium"
-                  >Team</a
-                >
-                <a
-                  href="#"
-                  class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium"
-                  >Projects</a
-                >
-                <a
-                  href="#"
-                  class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium"
-                  >Calendar</a
-                >
-              </div>
+          <div class="hidden sm:block sm:ml-6">
+            <div class="flex space-x-4">
+              <!-- Current: "bg-gray-900 text-white", Default: "text-gray-300 hover:bg-gray-700 hover:text-white" -->
+              <a href="#" class="bg-gray-900 text-white px-3 py-2 rounded-md text-sm font-medium">Not finished yet
+                Books</a>
+              <a href="#" class="bg-gray-900 text-white px-3 py-2 rounded-md text-sm font-medium">Read Books</a>
             </div>
           </div>
-          <div
-            class="absolute inset-y-0 right-0 flex items-center pr-2 sm:static sm:inset-auto sm:ml-6 sm:pr-0"
-          >
-            <!-- Profile dropdown -->
-            <div class="ml-3 relative">
-              <div class="relative mr-6 my-2">
-                <input
-                  type="search"
-                  class="bg-purple-white shadow rounded border-0 p-3"
-                  placeholder="Search by name..."
-                />
-                <div class="absolute top-4 right-1 pin-r pin-t mr-4 text-purple-lighter bg-white">
-                  <svg
-                    version="1.1"
-                    class="h-4 text-dark"
-                    xmlns="http://www.w3.org/2000/svg"
-                    xmlns:xlink="http://www.w3.org/1999/xlink"
-                    x="0px"
-                    y="0px"
-                    viewBox="0 0 52.966 52.966"
-                    style="enable-background: new 0 0 52.966 52.966"
-                    xml:space="preserve"
-                  >
-                    <path
-                      d="M51.704,51.273L36.845,35.82c3.79-3.801,6.138-9.041,6.138-14.82c0-11.58-9.42-21-21-21s-21,9.42-21,21s9.42,21,21,21
+        </div>
+        <div class="absolute inset-y-0 right-0 flex items-center pr-2 sm:static sm:inset-auto sm:ml-6 sm:pr-0">
+          <!-- Profile dropdown -->
+          <div class="ml-3 relative">
+            <div class="relative mr-6 my-2">
+              <input type="search" class="bg-purple-white shadow rounded border-0 p-3"
+                placeholder="Search by name..." />
+              <div class="absolute top-4 right-1 pin-r pin-t mr-4 text-purple-lighter bg-white">
+                <svg version="1.1" class="h-4 text-dark" xmlns="http://www.w3.org/2000/svg"
+                  xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 52.966 52.966"
+                  style="enable-background: new 0 0 52.966 52.966" xml:space="preserve">
+                  <path d="M51.704,51.273L36.845,35.82c3.79-3.801,6.138-9.041,6.138-14.82c0-11.58-9.42-21-21-21s-21,9.42-21,21s9.42,21,21,21
                       c5.083,0,9.748-1.817,13.384-4.832l14.895,15.491c0.196,0.205,0.458,0.307,0.721,0.307c0.25,0,0.499-0.093,0.693-0.279
                       C52.074,52.304,52.086,51.671,51.704,51.273z M21.983,40c-10.477,0-19-8.523-19-19s8.523-19,19-19s19,8.523,19,19
-                      S32.459,40,21.983,40z"
-                    />
-                  </svg>
-                </div>
+                      S32.459,40,21.983,40z" />
+                </svg>
               </div>
             </div>
+            <!-- Using utilities: -->
+
           </div>
-        </div>
-      </div>
-
-      <!--
-    Mobile menu, toggle classes based on menu state.
-
-    Menu open: "block", Menu closed: "hidden"
-  -->
-      <div class="hidden sm:hidden">
-        <div class="px-2 pt-2 pb-3 space-y-1">
-          <!-- Current: "bg-gray-900 text-white", Default: "text-gray-300 hover:bg-gray-700 hover:text-white" -->
-          <a
-            href="#"
-            class="bg-gray-900 text-white block px-3 py-2 rounded-md text-base font-medium"
-            >Dashboard</a
-          >
-          <a
-            href="#"
-            class="text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium"
-            >Team</a
-          >
-          <a
-            href="#"
-            class="text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium"
-            >Projects</a
-          >
-          <a
-            href="#"
-            class="text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium"
-            >Calendar</a
-          >
-        </div>
-      </div>
-    </nav>
-
-    <!-- ------ -->
-
-    <!-- modal -->
-    <div id="modal" class="fixed z-10 inset-0 overflow-y-auto hidden">
-      <div
-        class="flex items-end justify-center min-h-screen pt-4 px-4 pb-20 text-center sm:block sm:p-0"
-      >
-        <div class="fixed inset-0 transition-opacity" aria-hidden="true">
-          <div class="absolute inset-0 bg-gray-500 opacity-75"></div>
-        </div>
-
-        <span
-          class="hidden sm:inline-block sm:align-middle sm:h-screen"
-          aria-hidden="true"
-          >&#8203;</span
-        >
-
-        <div
-          class="inline-block align-bottom bg-white rounded-lg text-left overflow-hidden shadow-xl transform transition-all sm:my-8 sm:align-middle sm:max-w-lg sm:w-full"
-          role="dialog"
-          aria-modal="true"
-          aria-labelledby="modal-headline"
-        >
-          <div class="bg-white px-4 pt-5 pb-4 sm:p-6 sm:pb-4">
-            <h2 class="text-center mb-10 border-b-2 pb-3">Add book</h2>
-            <div class="sm:flex flex-col sm:items-start">
-              <div class="mb-10">
-                <label
-                  for="title"
-                  class="block text-sm font-medium text-gray-700"
-                  >Title</label
-                >
-                <div class="mt-1 relative rounded-md shadow-sm">
-                  <input
-                    type="text"
-                    name="title"
-                    id="title"
-                    class="focus:ring-indigo-500 p-2 border focus:border-indigo-500 block w-full pl-7 pr-12 sm:text-sm border-gray-300 rounded-md"
-                    placeholder="Book Title"
-                  />
-                  <div
-                    class="absolute inset-y-0 right-0 flex items-center"
-                  ></div>
-                </div>
-              </div>
-
-              <div class="mb-10">
-                <label
-                  for="author"
-                  class="block text-sm font-medium text-gray-700"
-                  >Author</label
-                >
-                <div class="mt-1 relative rounded-md shadow-sm">
-                  <input
-                    type="text"
-                    name="author"
-                    id="author"
-                    class="focus:ring-indigo-500 p-2 border focus:border-indigo-500 block w-full pl-7 pr-12 sm:text-sm border-gray-300 rounded-md"
-                    placeholder="Author name"
-                  />
-                  <div
-                    class="absolute inset-y-0 right-0 flex items-center"
-                  ></div>
-                </div>
-              </div>
-
-              <div class="mb-10">
-                <label
-                  for="genre"
-                  class="block text-sm font-medium text-gray-700"
-                  >Genre</label
-                >
-                <div class="mt-1 relative rounded-md shadow-sm">
-                  <input
-                    type="text"
-                    name="genre"
-                    id="genre"
-                    class="focus:ring-indigo-500 p-2 border focus:border-indigo-500 block w-full pl-7 pr-12 sm:text-sm border-gray-300 rounded-md"
-                    placeholder="add genre"
-                  />
-                  <div
-                    class="absolute inset-y-0 right-0 flex items-center"
-                  ></div>
-                </div>
-              </div>
-
-              <div class="mb-10">
-                <label
-                  for="pages"
-                  class="block text-sm font-medium text-gray-700"
-                  >Pages</label
-                >
-                <div class="mt-1 relative rounded-md shadow-sm">
-                  <input
-                    type="number"
-                    name="pages"
-                    id="pages"
-                    class="focus:ring-indigo-500 p-2 border focus:border-indigo-500 block w-full pl-7 pr-12 sm:text-sm border-gray-300 rounded-md"
-                    placeholder="How many pages is the book"
-                  />
-                  <div
-                    class="absolute inset-y-0 right-0 flex items-center"
-                  ></div>
-                </div>
-              </div>
-
-              <div class="mb-10">
-                <label
-                  for="cover"
-                  class="block text-sm font-medium text-gray-700"
-                  >Cover</label
-                >
-                <div class="mt-1 relative rounded-md shadow-sm">
-                  <input
-                    type="text"
-                    name="cover"
-                    id="cover"
-                    class="focus:ring-indigo-500 p-2 border focus:border-indigo-500 block w-full pl-7 pr-12 sm:text-sm border-gray-300 rounded-md"
-                    placeholder="Add cover for the book"
-                  />
-                  <div
-                    class="absolute inset-y-0 right-0 flex items-center"
-                  ></div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="bg-gray-50 px-4 py-3 sm:px-6 sm:flex sm:flex-row-reverse">
-            <button
-              type="button"
-              class="w-full inline-flex justify-center rounded-md border border-transparent shadow-sm px-4 py-2 bg-green-600 text-base font-medium text-white hover:bg-green-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-green-500 sm:ml-3 sm:w-auto sm:text-sm"
-            >
-              Add book
-            </button>
-            <button
-              type="button"
-              class="mt-3 w-full inline-flex justify-center rounded-md border border-gray-300 shadow-sm px-4 py-2 bg-white text-base font-medium text-gray-700 hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 sm:mt-0 sm:ml-3 sm:w-auto sm:text-sm"
-            >
-              Cancel
-            </button>
-          </div>
+          <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded" id="add-book-modal">Add
+            Book</button>
         </div>
       </div>
     </div>
 
-    <script src="scripts/book.js" type="module"></script>
-    <script src="scripts/library.js" type="module"></script>
-    <script src="scripts/main.js" type="module"></script>
-  </body>
+    <!--
+    Mobile menu, toggle classes based on menu state.
+
+    Menu open: "block", Menu closed: "hidden"
+  -->
+    <div class="hidden sm:hidden">
+      <div class="px-2 pt-2 pb-3 space-y-1">
+        <!-- Current: "bg-gray-900 text-white", Default: "text-gray-300 hover:bg-gray-700 hover:text-white" -->
+        <a href="#" class="bg-gray-900 text-white block px-3 py-2 rounded-md text-base font-medium">Dashboard</a>
+        <a href="#"
+          class="text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium">Team</a>
+        <a href="#"
+          class="text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium">Projects</a>
+        <a href="#"
+          class="text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium">Calendar</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- ------ -->
+
+  <!-- modal -->
+  <div id="modal" class="fixed z-10 inset-0 overflow-y-auto hidden">
+    <div class="flex items-end justify-center min-h-screen pt-4 px-4 pb-20 text-center sm:block sm:p-0">
+      <div class="fixed inset-0 transition-opacity" aria-hidden="true">
+        <div class="absolute inset-0 bg-gray-500 opacity-75"></div>
+      </div>
+
+      <span class="hidden sm:inline-block sm:align-middle sm:h-screen" aria-hidden="true">&#8203;</span>
+
+      <div
+        class="inline-block align-bottom bg-white rounded-lg text-left overflow-hidden shadow-xl transform transition-all sm:my-8 sm:align-middle sm:max-w-lg sm:w-full"
+        role="dialog" aria-modal="true" aria-labelledby="modal-headline">
+        <div class="bg-white px-4 pt-5 pb-4 sm:p-6 sm:pb-4">
+          <h2 class="text-center mb-10 border-b-2 pb-3">Add book</h2>
+          <div class="sm:flex flex-col">
+            <div class="mb-10">
+              <label for="title" class="block text-sm font-medium text-gray-700">Title</label>
+              <div class="mt-1 relative rounded-md shadow-sm">
+                <input type="text" name="title" id="title"
+                  class="focus:ring-indigo-500 p-2 border focus:border-indigo-500 block w-full pl-7 pr-12 sm:text-sm border-gray-300 rounded-md"
+                  placeholder="Book Title" />
+                <div class="absolute inset-y-0 right-0 flex items-center"></div>
+              </div>
+            </div>
+
+            <div class="mb-10">
+              <label for="author" class="block text-sm font-medium text-gray-700">Author</label>
+              <div class="mt-1 relative rounded-md shadow-sm">
+                <input type="text" name="author" id="author"
+                  class="focus:ring-indigo-500 p-2 border focus:border-indigo-500 block w-full pl-7 pr-12 sm:text-sm border-gray-300 rounded-md"
+                  placeholder="Author name" />
+                <div class="absolute inset-y-0 right-0 flex items-center"></div>
+              </div>
+            </div>
+
+            <div class="mb-10">
+              <label for="genre" class="block text-sm font-medium text-gray-700">Genre</label>
+              <div class="mt-1 relative rounded-md shadow-sm">
+                <input type="text" name="genre" id="genre"
+                  class="focus:ring-indigo-500 p-2 border focus:border-indigo-500 block w-full pl-7 pr-12 border-gray-300 rounded-md"
+                  placeholder="add genre" />
+                <div class="absolute inset-y-0 right-0 flex items-center"></div>
+              </div>
+            </div>
+
+            <div class="mb-10">
+              <label for="pages" class="block text-sm font-medium text-gray-700">Pages</label>
+              <div class="mt-1 relative rounded-md shadow-sm">
+                <input type="number" name="pages" id="pages"
+                  class="focus:ring-indigo-500 p-2 border focus:border-indigo-500 block w-full pl-7 pr-12 sm:text-sm border-gray-300 rounded-md"
+                  placeholder="How many pages is the book" />
+                <div class="absolute inset-y-0 right-0 flex items-center"></div>
+              </div>
+            </div>
+
+            <div class="mb-10">
+              <label for="cover" class="block text-sm font-medium text-gray-700">Cover</label>
+              <div class="mt-1 relative rounded-md shadow-sm">
+                <input type="text" name="cover" id="cover"
+                  class="focus:ring-indigo-500 p-2 border focus:border-indigo-500 block w-full pl-7 pr-12 sm:text-sm border-gray-300 rounded-md"
+                  placeholder="Add cover for the book" />
+                <div class="absolute inset-y-0 right-0 flex items-center"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="bg-gray-50 px-4 py-3 sm:px-6 sm:flex sm:flex-row-reverse">
+          <button type="button"
+            class="w-full inline-flex justify-center rounded-md border border-transparent shadow-sm px-4 py-2 bg-green-600 text-base font-medium text-white hover:bg-green-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-green-500 sm:ml-3 sm:w-auto sm:text-sm">
+            Add book
+          </button>
+          <button type="button"
+            class="mt-3 w-full inline-flex justify-center rounded-md border border-gray-300 shadow-sm px-4 py-2 bg-white text-base font-medium text-gray-700 hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 sm:mt-0 sm:ml-3 sm:w-auto sm:text-sm">
+            Cancel
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="scripts/book.js" type="module"></script>
+  <script src="scripts/library.js" type="module"></script>
+  <script src="scripts/main.js" type="module"></script>
+</body>
+
 </html>
