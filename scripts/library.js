@@ -13,7 +13,7 @@ let myLibrary = [
     genre: " Parallel universes in fiction,Fiction",
     pages: 442,
     cover:
-      "https://http2.mlstatic.com/D_NQ_NP_2X_961845-MLM43604844141_092020-F.webp",
+      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTBQZSg-b2LFkLlt9fWndS1w8SONabDZBHf0dtdb3-bqcuKxduL",
   },
   {
     title: "1Q84",
@@ -21,29 +21,20 @@ let myLibrary = [
     genre: " Parallel universes in fiction,Fiction",
     pages: 442,
     cover:
-      "https://http2.mlstatic.com/D_NQ_NP_2X_961845-MLM43604844141_092020-F.webp",
-  },
-  {
-    title: "1Q84",
-    author: "Haruki Murakami",
-    genre: " Parallel universes in fiction,Fiction",
-    pages: 442,
-    cover:
-      "https://http2.mlstatic.com/D_NQ_NP_2X_961845-MLM43604844141_092020-F.webp",
-  },
-  {
-    title: "1Q84",
-    author: "Haruki Murakami",
-    genre: " Parallel universes in fiction,Fiction",
-    pages: 442,
-    cover:
-      "https://http2.mlstatic.com/D_NQ_NP_2X_961845-MLM43604844141_092020-F.webp",
-  },
+      "",
+  }
 ];
 
 Array.prototype.addBookToLibrary = function (book) {
-  this.push(book);
-  console.log(this);
+  this.push(book)
 };
+
+Array.prototype.removeBookFromLibrary = function (book) {
+  let arr = [...this]
+  console.log(arr);
+
+};
+
+
 
 export default myLibrary;

@@ -70,3 +70,9 @@ addBookButton.addEventListener("click", function (e) {
 cancelButton.addEventListener("click", () => {
   modal.classList.add("hidden");
 });
+
+
+console.log(document.getElementsByClassName('remove-btn'));
+document.getElementsByClassName('remove-btn').addEventListener("click", () => {
+  console.log('remove boook');
+});
