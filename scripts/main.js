@@ -1,8 +1,9 @@
 import myLibrary from "./library.js";
 import Book from "./book.js";
 import { renderBooks } from "./helper.js";
-const library = document.getElementById("library_container");
-const bookTable = document.createElement("ul");
+const library = document.createElement('div');
+document.getElementsByTagName('body')[0].appendChild(library)
+const bookTable = document.createElement("div");
 library.appendChild(bookTable);
 
 /* modal elements */

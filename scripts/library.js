@@ -17,10 +17,6 @@ let myLibrary = [
   },
 ];
 
-// export default function Library(books) {
-//   this.books = books;
-// }
-
 Array.prototype.addBookToLibrary = function (book) {
   this.push(book);
   console.log(this);
