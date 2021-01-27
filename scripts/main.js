@@ -21,6 +21,10 @@ library.appendChild(info);
 // ----------------
 
 
+/* Main View elements */
+let addBookModal = document.getElementById("add-book-modal");
+
+
 /* modal elements */
 
 let modal = document.getElementById("modal");
@@ -44,6 +48,10 @@ renderBooks(myLibrary, bookTable);
 
 /* Add book to library */
 
+addBookModal.addEventListener("click", function (e) {
+  modal.classList.remove("hidden");
+});
+
 addBookButton.addEventListener("click", function (e) {
   e.preventDefault;
   let book = new Book(
@@ -56,7 +64,7 @@ addBookButton.addEventListener("click", function (e) {
   myLibrary.addBookToLibrary(book);
   bookTable.innerHTML = "";
   renderBooks(myLibrary, bookTable);
-  // modal.classList.add("hidden");
+  modal.classList.add("hidden");
 });
 
 cancelButton.addEventListener("click", () => {
