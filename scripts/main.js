@@ -38,8 +38,9 @@ addBookButton.addEventListener("click", function (e) {
     cover.value
   );
   myLibrary.addBookToLibrary(book);
+  bookTable.innerHTML = "";
   renderBooks(myLibrary, bookTable);
-  modal.classList.add("hidden");
+  // modal.classList.add("hidden");
 });
 
 cancelButton.addEventListener("click", () => {
