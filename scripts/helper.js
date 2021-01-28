@@ -8,11 +8,13 @@ export function renderBooks(arr, parentElement) {
     let toogleLabel = bookCard.getElementsByClassName("toggle-status")[0];
 
     toogle.addEventListener("change", () => {
-      toogle.checked ? toogleLabel.innerHTML = "Already read" : toogleLabel.innerHTML = "Not finished";
+      toogle.checked
+        ? (toogleLabel.innerHTML = "Already read")
+        : (toogleLabel.innerHTML = "Not finished");
       book.changeStatus(toogle.checked);
 
-      let finishedBooks = arr.filter(item =>item.isRead).length;
-      document.getElementById('info-finished').innerHTML = finishedBooks;
+      let finishedBooks = arr.filter((item) => item.isRead).length;
+      document.getElementById("info-finished").innerHTML = finishedBooks;
       // renderBooksInfo(arr, document.getElementsByTagName("aside")[0]);
     });
 
@@ -29,17 +31,15 @@ export function renderBooks(arr, parentElement) {
 }
 
 export function renderBooksInfo(books, domElement) {
-  let finishedBooks = books.filter(item =>item.isRead).length;
-  document.getElementById('info-total').innerHTML = books.length;
-  document.getElementById('info-finished').innerHTML = finishedBooks;
+  let finishedBooks = books.filter((item) => item.isRead).length;
+  document.getElementById("info-total").innerHTML = books.length;
+  document.getElementById("info-finished").innerHTML = finishedBooks;
 }
-
-
 
 function createBook(book) {
   let card = document.createElement("article");
- 
-  card.innerHTML = book.createCard()
+
+  card.innerHTML = book.createCard();
 
   return card;
 }

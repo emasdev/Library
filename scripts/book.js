@@ -1,4 +1,4 @@
-export default function Book(title, author, genre, pages,read_pages=0, cover='', isRead=false) {
+export default function Book(title, author, genre, pages,read_pages=0, cover='', isRead=false,favorite=false) {
   this.title = title;
   this.author = author;
   this.genre = genre;
@@ -6,9 +6,14 @@ export default function Book(title, author, genre, pages,read_pages=0, cover='',
   this.read_pages = read_pages;
   this.cover = cover;
   this.isRead = isRead;
+  this.favorite = favorite
 
   this.changeStatus = function(status) {
     this.isRead = status;
+  }
+
+  this.isFavorite = function(isFavorite){
+    this.favorite = isFavorite;
   }
 
   this.createCard = function () {
