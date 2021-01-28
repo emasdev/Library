@@ -1,14 +1,23 @@
-export default function Book(title, author, genre, pages, cover) {
+export default function Book(title, author, genre, pages, cover, isRead) {
   this.title = title;
   this.author = author;
   this.genre = genre;
   this.pages = pages;
   this.cover = cover;
+  this.isRead = isRead;
 
   this.createCard = function () {
     let defaultImage =
       "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSUBVTmWmQDY05iDPuCQSTZDN7EN6Xr_P5jLg&usqp=CAU";
     let imgsrc = this.cover.length > 0 ? this.cover : defaultImage;
+
+
+    let toogleHTML = `<div class="relative inline-block w-10 mr-2 align-middle select-none transition duration-200 ease-in">
+    <input type="checkbox" name="toggle" id="toggle" class="toggle-checkbox absolute block w-6 h-6 rounded-full bg-white border-4 appearance-none cursor-pointer" ${this.isRead && 'checked' }/>
+    <label for="toggle" class="toggle-label block overflow-hidden h-6 rounded-full bg-gray-300 cursor-pointer"></label>
+</div>
+<label for="toggle" class="text-xs text-gray-700 toggle-status">${this.isRead ? 'Already read' : 'Not finished' }</label>`
+
 
     let article = `<div class="flex items-center justify-center">
     <div class="max-w-sm w-full py-6 px-3">
@@ -30,9 +39,9 @@ export default function Book(title, author, genre, pages, cover) {
                 
             </div>
             <div class="px-4 pt-3 pb-4 border-t border-gray-300 bg-gray-100">
-                <div class="text-xs uppercase font-bold text-gray-600 tracking-wide">Realtor</div>
+                ${toogleHTML}
                 <div class="flex justify-between items-center pt-2">
-                    <button>Read</button>
+                    <button>Edit</button>
                     <button class="remove-btn">Remove</button>
                 </div>
             </div>

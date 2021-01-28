@@ -6,7 +6,7 @@ import { renderBooks } from "./helper.js";
 
 const library = document.createElement("div");
 document.getElementsByTagName("body")[0].appendChild(library);
-library.classList.add("flex", "flex-row");
+library.classList.add("flex", "flex-row", "min-h-full");
 
 const bookTable = document.createElement("div");
 bookTable.id = "bookTable";
