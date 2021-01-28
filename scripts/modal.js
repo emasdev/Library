@@ -22,7 +22,7 @@ modalAddButton.addEventListener("click", function () {
     pages.value,
     read_pages.value,
     cover.value,
-    isRead.value
+    isRead.checked
   );
   myLibrary.addBookToLibrary(book);
   bookTable.innerHTML = "";
