@@ -1,4 +1,4 @@
-export function renderBooks(arr, domElement) {
+export function renderBooks(arr, parentElement) {
   arr.forEach((book) => {
     let bookCard = createBook(book);
 
@@ -10,17 +10,17 @@ export function renderBooks(arr, domElement) {
       document.getElementById("bookTable").innerHTML = "";
       renderBooks(arr, document.getElementById("bookTable"));
     });
-    
-    domElement.appendChild(bookCard);
+
+    parentElement.appendChild(bookCard);
   });
 }
 
 function createBook(book) {
   let card = document.createElement("article");
-  let imgsrc =
+  let defaultImage =
     "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSUBVTmWmQDY05iDPuCQSTZDN7EN6Xr_P5jLg&usqp=CAU";
-  if (book.cover.length > 0) imgsrc = book.cover;
-  card.innerHTML = `<div class="flex items-center justify-center min-h-screen">
+  let imgsrc = book.cover.length > 0 ? book.cover : defaultImage;
+  card.innerHTML = `<div class="flex items-center justify-center">
             <div class="max-w-sm w-full py-6 px-3">
                 <div class="bg-white shadow-xl rounded-lg overflow-hidden">
                     <div class="bg-cover bg-center h-56 p-4" style="background-image: url(${imgsrc})">

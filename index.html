@@ -13,10 +13,10 @@
           <div
             class="flex-1 flex items-center justify-center sm:items-stretch sm:justify-start"
           >
-            <div class="h-12 flex-shrink-0 flex items-center">
+            <div class="h-12 shadow-2xl flex-shrink-0 flex items-center">
              
               <img
-                class="h-full w-auto"
+                class="h-full w-auto shadow-lg"
                 src="logo.png"
                 alt="Workflow"
               />
@@ -25,11 +25,11 @@
             <div class="flex align-middle sm:ml-6">
               <div class="flex space-x-4">
                 <button
-                  class="bg-gray-900 text-white px-3 py-2 rounded-md text-sm font-medium"
+                  class="bg-gray-900 hover:bg-gray-700 text-white px-3 py-2 rounded-md text-sm font-medium"
                   >Not finished yet Books</a
                 >
                 <button
-                  class="bg-gray-900 text-white px-3 py-2 rounded-md text-sm font-medium"
+                  class="bg-gray-900 hover:bg-gray-700 text-white px-3 py-2 rounded-md text-sm font-medium"
                   >Read Books</a
                 >
               </div>
@@ -79,37 +79,6 @@
               Add Book
             </button>
           </div>
-        </div>
-      </div>
-
-      <!--
-    Mobile menu, toggle classes based on menu state.
-
-    Menu open: "block", Menu closed: "hidden"
-  -->
-      <div class="hidden sm:hidden">
-        <div class="px-2 pt-2 pb-3 space-y-1">
-          <!-- Current: "bg-gray-900 text-white", Default: "text-gray-300 hover:bg-gray-700 hover:text-white" -->
-          <a
-            href="#"
-            class="bg-gray-900 text-white block px-3 py-2 rounded-md text-base font-medium"
-            >Dashboard</a
-          >
-          <a
-            href="#"
-            class="text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium"
-            >Team</a
-          >
-          <a
-            href="#"
-            class="text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium"
-            >Projects</a
-          >
-          <a
-            href="#"
-            class="text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium"
-            >Calendar</a
-          >
         </div>
       </div>
     </nav>
@@ -257,8 +226,8 @@
       </div>
     </div>
 
-    <script src="scripts/book.js" type="module"></script>
-    <script src="scripts/library.js" type="module"></script>
-    <script src="scripts/main.js" type="module"></script>
+    <script src="scripts/book.js" type="module" defer></script>
+    <script src="scripts/library.js" type="module" defer></script>
+    <script src="scripts/main.js" type="module" defer></script>
   </body>
 </html>
