@@ -28,6 +28,10 @@ bookTable.classList.add(
 
 const info = document.createElement("aside");
 info.classList.add("bg-red-400", "border-l-2", "w-1/4", "pt-20");
+info.innerHTML = "<h3 class='text-center'>Information</h3>";
+info.innerHTML += "<hr>";
+info.innerHTML += '<div class="flex justify-between px-4 py-2"><p>Books</p><p id="info-total"></p></div>';
+info.innerHTML += '<div class="flex justify-between px-4 py-2"><p>Completed Books</p><p id="info-finished"></p></div>'; 
 
 
 // -----------------
