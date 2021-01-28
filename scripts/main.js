@@ -10,8 +10,7 @@ library.classList.add('flex','flex-row','h-screen')
 
 const bookTable = document.createElement("div");
 bookTable.id = 'bookTable';
-bookTable.classList.add('flex-1','pt-20','grid','md:grid-cols-3','grid-col-2','row-span-3')
-console.log(bookTable);
+bookTable.classList.add('bg-gray-200', 'flex-1','pt-20','grid','md:grid-cols-3','grid-col-2','row-span-3')
 
 const info = document.createElement('aside')
 info.classList.add('border-l-2','w-1/4','pt-20')
