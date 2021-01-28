@@ -1,6 +1,6 @@
 import myLibrary from "./library.js";
 import Book from "./book.js";
-import { renderBooks } from "./helper.js";
+import { renderBooks,renderBooksInfo } from "./helper.js";
 
 /* library */
 
@@ -24,16 +24,11 @@ bookTable.classList.add(
 
 // ----------
 
-let finishedBooks = myLibrary.filter(item =>item.isRead).length;
-
 /* aside component */
 
 const info = document.createElement("aside");
 info.classList.add("bg-red-400", "border-l-2", "w-1/4", "pt-20");
-info.innerHTML = "<h3 class='text-center'>Information</h3>";
-info.innerHTML += "<hr>";
-info.innerHTML += '<div class="flex justify-between px-4 py-2"><p>Books</p><p>' + myLibrary.length + '</p></div>';
-info.innerHTML += '<div class="flex justify-between px-4 py-2"><p>Completed Books</p><p> '+finishedBooks+' </p></div>';
+
 
 // -----------------
 
@@ -62,6 +57,7 @@ let isRead = document.getElementById("isRead");
 /* Render books */
 
 renderBooks(myLibrary, bookTable);
+renderBooksInfo(myLibrary, info);
 
 /* Add book to library */
 
@@ -83,6 +79,7 @@ modalAddButton.addEventListener("click", function (e) {
   myLibrary.addBookToLibrary(book);
   bookTable.innerHTML = "";
   renderBooks(myLibrary, bookTable);
+  renderBooksInfo(myLibrary, info);
   modal.classList.add("hidden");
 });
 

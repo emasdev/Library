@@ -7,6 +7,10 @@ export default function Book(title, author, genre, pages,read_pages=0, cover='',
   this.cover = cover;
   this.isRead = isRead;
 
+  this.changeStatus = function(status) {
+    this.isRead = status;
+  }
+
   this.createCard = function () {
     let defaultImage =
       "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSUBVTmWmQDY05iDPuCQSTZDN7EN6Xr_P5jLg&usqp=CAU";
