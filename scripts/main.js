@@ -2,11 +2,13 @@ import myLibrary from "./library.js";
 import Book from "./book.js";
 import { renderBooks } from "./helper.js";
 
-/* container */
+/* library */
 
 const library = document.createElement("div");
 document.getElementsByTagName("body")[0].appendChild(library);
 library.classList.add("flex", "flex-row", "min-h-full");
+
+/* book table */
 
 const bookTable = document.createElement("div");
 bookTable.id = "bookTable";
@@ -20,8 +22,11 @@ bookTable.classList.add(
   "row-span-3"
 );
 
+// ----------
 
 let finishedBooks = myLibrary.filter(item =>item.isRead).length;
+
+/* aside component */
 
 const info = document.createElement("aside");
 info.classList.add("bg-red-400", "border-l-2", "w-1/4", "pt-20");
@@ -30,11 +35,13 @@ info.innerHTML += "<hr>";
 info.innerHTML += '<div class="flex justify-between px-4 py-2"><p>Books</p><p>' + myLibrary.length + '</p></div>';
 info.innerHTML += '<div class="flex justify-between px-4 py-2"><p>Completed Books</p><p> '+finishedBooks+' </p></div>';
 
+// -----------------
+
 library.appendChild(bookTable);
 library.appendChild(info);
 // ----------------
 
-/* Main View elements */
+/* header */
 let addBookModal = document.getElementById("add-book-modal");
 
 /* modal elements */
@@ -47,13 +54,13 @@ let title = document.getElementById("title");
 let author = document.getElementById("author");
 let genre = document.getElementById("genre");
 let pages = document.getElementById("pages");
-let cover = document.getElementById("cover");
+let read_pages = document.getElementById("read_pages");
+let isRead = document.getElementById("isRead");
 
 // --------------------
 
 /* Render books */
 
-// render books to the screen
 renderBooks(myLibrary, bookTable);
 
 /* Add book to library */
@@ -69,7 +76,9 @@ modalAddButton.addEventListener("click", function (e) {
     author.value,
     genre.value,
     pages.value,
-    cover.value
+    read_pages.value,
+    cover.value,
+    isRead.value
   );
   myLibrary.addBookToLibrary(book);
   bookTable.innerHTML = "";

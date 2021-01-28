@@ -19,6 +19,7 @@ export function renderBooks(arr, parentElement) {
 
     parentElement.appendChild(bookCard);
   });
+  console.log(arr);
 }
 
 function createBook(book) {

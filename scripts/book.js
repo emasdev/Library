@@ -1,8 +1,9 @@
-export default function Book(title, author, genre, pages, cover, isRead) {
+export default function Book(title, author, genre, pages,read_pages=0, cover='', isRead=false) {
   this.title = title;
   this.author = author;
   this.genre = genre;
   this.pages = pages;
+  this.read_pages = read_pages;
   this.cover = cover;
   this.isRead = isRead;
 
