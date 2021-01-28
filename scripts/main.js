@@ -22,6 +22,7 @@ bookTable.classList.add(
 
 
 let finishedBooks = myLibrary.filter(item =>item.isRead).length;
+
 const info = document.createElement("aside");
 info.classList.add("bg-red-400", "border-l-2", "w-1/4", "pt-20");
 info.innerHTML = "<h3 class='text-center'>Information</h3>";
