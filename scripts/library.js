@@ -16,7 +16,7 @@ let myLibrary = [
       "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTBQZSg-b2LFkLlt9fWndS1w8SONabDZBHf0dtdb3-bqcuKxduL",
   },
   {
-    title: "1Q84",
+    title: "dddddd",
     author: "Haruki Murakami",
     genre: " Parallel universes in fiction,Fiction",
     pages: 442,
@@ -26,13 +26,12 @@ let myLibrary = [
 ];
 
 Array.prototype.addBookToLibrary = function (book) {
+  console.log(this);
   this.push(book)
 };
 
-Array.prototype.removeBookFromLibrary = function (book) {
-  let arr = [...this]
-  console.log(arr);
-
+Array.prototype.removeBookFromLibrary = function (book) {  
+  return this.filter(el=>el!=book)
 };
 
 

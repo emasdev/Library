@@ -1,28 +1,25 @@
-export function makeElement(tag, text = "", parent) {
-  let el = document.createElement(tag);
-  console.log(el);
-  el.innerText = text;
-  parent.appendChild(el);
-  return el;
-}
-
 export function renderBooks(arr, domElement) {
-  let index = 0;
   arr.forEach((book) => {
-
-
     let bookCard = createBook(book);
 
-    console.log(bookCard.children);
+    let editBtn = bookCard.getElementsByTagName("button")[0];
+    let removeBtn = bookCard.getElementsByTagName("button")[1];
+
+    removeBtn.addEventListener("click", () => {
+      arr = arr.removeBookFromLibrary(book);
+      document.getElementById("bookTable").innerHTML = "";
+      renderBooks(arr, document.getElementById("bookTable"));
+    });
+    
     domElement.appendChild(bookCard);
   });
 }
 
 function createBook(book) {
   let card = document.createElement("article");
-  let imgsrc = "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSUBVTmWmQDY05iDPuCQSTZDN7EN6Xr_P5jLg&usqp=CAU"
-  if(book.cover.length > 0)
-    imgsrc = book.cover;
+  let imgsrc =
+    "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSUBVTmWmQDY05iDPuCQSTZDN7EN6Xr_P5jLg&usqp=CAU";
+  if (book.cover.length > 0) imgsrc = book.cover;
   card.innerHTML = `<div class="flex items-center justify-center min-h-screen">
             <div class="max-w-sm w-full py-6 px-3">
                 <div class="bg-white shadow-xl rounded-lg overflow-hidden">
@@ -53,11 +50,5 @@ function createBook(book) {
             </div>
         </div>`;
 
-  // card.classList.add("m-6", "border",'bg-red-300');
-
-  // makeElement("h3", book.title, card);
-  // makeElement("p", book.author, card);
-  // makeElement("p", book.gender, card);
-  // makeElement("p", book.pages, card);
   return card;
 }

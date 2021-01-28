@@ -9,7 +9,9 @@ document.getElementsByTagName('body')[0].appendChild(library)
 library.classList.add('flex','flex-row','h-screen')
 
 const bookTable = document.createElement("div");
+bookTable.id = 'bookTable';
 bookTable.classList.add('flex-1','pt-20','grid','md:grid-cols-3','grid-col-2','row-span-3')
+console.log(bookTable);
 
 const info = document.createElement('aside')
 info.classList.add('border-l-2','w-1/4','pt-20')
@@ -41,7 +43,6 @@ let cover = document.getElementById("cover");
 
 /* Render books */
 
-console.log(myLibrary);
 
 // render books to the screen
 renderBooks(myLibrary, bookTable);
@@ -69,10 +70,4 @@ addBookButton.addEventListener("click", function (e) {
 
 cancelButton.addEventListener("click", () => {
   modal.classList.add("hidden");
-});
-
-
-console.log(document.getElementsByClassName('remove-btn'));
-document.getElementsByClassName('remove-btn').addEventListener("click", () => {
-  console.log('remove boook');
 });
