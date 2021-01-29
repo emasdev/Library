@@ -41,7 +41,7 @@ info.classList.add(
 );
 
 info.innerHTML = `
-  <h3 class='text-3xl px-4 text-center py-5 border-b-2 mb-10 text-white'>All books</h3>
+  <h3 id ='category_info' class='text-3xl px-4 text-center py-5 border-b-2 mb-10 text-white'>All books</h3>
   <div class='shadow-2xl mb-6'>
     <h4 class='text-2xl text-center pb-4 text-white'>Information</h4>
     <div class="flex justify-between px-4 py-2"><p>Books</p><p id="info-total"></p></div>
@@ -62,6 +62,9 @@ library.appendChild(info);
 
 /* header */
 let addBookModal = document.getElementById("add-book-modal");
+let showAllBooks = document.getElementById('all_books');
+let showNotFinishBooks = document.getElementById('not_finished');
+let showFinishBooks = document.getElementById('finished');
 
 /* Render books */
 
@@ -73,4 +76,22 @@ renderFavoriteInfo(myLibrary);
 
 addBookModal.addEventListener("click", function (e) {
   modal.classList.remove("hidden");
+});
+
+showNotFinishBooks.addEventListener('click',function(){
+  bookTable.innerHTML=''
+  renderBooks(myLibrary.filter(el=>!el.isRead), bookTable);
+  document.getElementById('category_info').innerHTML='Incomplete books'
+});
+
+showAllBooks.addEventListener('click',function(){
+  bookTable.innerHTML=''
+  renderBooks(myLibrary, bookTable);
+  document.getElementById('category_info').innerHTML='All books'
+});
+
+showFinishBooks.addEventListener('click',function(){
+  bookTable.innerHTML=''
+  renderBooks(myLibrary.filter(el=>el.isRead), bookTable);
+  document.getElementById('category_info').innerHTML='Finished books'
 });

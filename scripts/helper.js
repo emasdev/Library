@@ -1,10 +1,8 @@
 export function renderBooks(arr, parentElement) {
-  console.log(arr);
   arr.forEach((book) => {
     let bookCard = createBook(book);
 
-    let editBtn = bookCard.getElementsByTagName("button")[0];
-    let removeBtn = bookCard.getElementsByTagName("button")[1];
+    let removeBtn = bookCard.getElementsByTagName("button")[0];
     let toogle = bookCard.getElementsByClassName("toggle-checkbox")[0];
     let toogleLabel = bookCard.getElementsByClassName("toggle-status")[0];
     let toogleFavorite = bookCard.getElementsByClassName("toggle-favorite")[0];

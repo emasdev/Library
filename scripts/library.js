@@ -35,20 +35,27 @@ let defaultData = [
   ),
 ];
 
-// console.log(myLibrary);
 let myLibrary = [];
-if(!localStorage.getItem("myLibrary")){
-  myLibrary = localStorage.setItem("myLibrary", JSON.stringify(defaultData));
-} else {  
+if (!localStorage.getItem("myLibrary")) {
+  localStorage.setItem("myLibrary", JSON.stringify(defaultData));
+  myLibrary = defaultData;
+} else {
   let myLibraryData = JSON.parse(localStorage.getItem("myLibrary"));
-  myLibraryData.forEach(e => {
-
-    // myLibrary.push(new Book({...e}));
-    myLibrary.push(new Book(e.title, e.author, e.genre, e.pages, e.read_pages, e.cover, e.isRead, e.favorite));
+  myLibraryData.forEach((e) => {
+    myLibrary.push(
+      new Book(
+        e.title,
+        e.author,
+        e.genre,
+        e.pages,
+        e.read_pages,
+        e.cover,
+        e.isRead,
+        e.favorite
+      )
+    );
   });
 }
-
-// console.log(myLibrary);
 
 Array.prototype.addBookToLibrary = function (book) {
   this.push(book);
