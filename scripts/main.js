@@ -48,7 +48,7 @@ info.innerHTML = `
     <div class="flex justify-between px-4 py-2"><p>Completed Books</p><p id="info-finished"></p></div>
   </div>
   <h4 class='text-2xl text-center pb-2'>Favorite books</h4>
-  <div class='m-auto'>
+  <div class='absolute flex justify-center left-0 right-0 bottom-0 mb-10'>
     <button class='inline-block px-6 py-2 text-xs font-medium leading-6 text-center text-white uppercase transition bg-red-500 rounded shadow ripple hover:shadow-lg hover:bg-red-600 focus:outline-none'>Delete all books</button>
   </div>
 `;
