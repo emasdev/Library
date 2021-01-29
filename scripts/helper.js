@@ -1,4 +1,5 @@
 export function renderBooks(arr, parentElement) {
+  console.log(arr);
   arr.forEach((book) => {
     let bookCard = createBook(book);
 
@@ -25,6 +26,7 @@ export function renderBooks(arr, parentElement) {
 
       let finishedBooks = arr.filter((item) => item.isRead).length;
       document.getElementById("info-finished").innerHTML = finishedBooks;
+      localStorage.setItem("myLibrary", JSON.stringify(arr));
     });
 
     toogleFavorite.addEventListener("click", () => {
@@ -37,6 +39,7 @@ export function renderBooks(arr, parentElement) {
         toogleFavoriteOff.classList.remove("hidden");
         book.isFavorite(false);
       }
+      localStorage.setItem("myLibrary", JSON.stringify(arr));
       renderFavoriteInfo(arr);
     });
 
@@ -45,6 +48,7 @@ export function renderBooks(arr, parentElement) {
       document.getElementById("bookTable").innerHTML = "";
       renderBooks(arr, document.getElementById("bookTable"));
       renderBooksInfo(arr);
+      localStorage.setItem("myLibrary", JSON.stringify(arr));
     });
 
     parentElement.appendChild(bookCard);

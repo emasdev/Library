@@ -32,6 +32,7 @@ modalAddButton.addEventListener("click", function () {
   renderBooksInfo(myLibrary);
   renderFavoriteInfo(myLibrary);
   modal.classList.add("hidden");
+  localStorage.setItem("myLibrary", JSON.stringify(myLibrary));
 });
 
 modalCancelButton.addEventListener("click", () => {

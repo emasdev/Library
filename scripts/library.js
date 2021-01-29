@@ -1,6 +1,6 @@
 import Book from "./book.js";
 
-let myLibrary = [
+let defaultData = [
   new Book(
     "Fight club",
     "Chuck Palahniuk",
@@ -34,6 +34,21 @@ let myLibrary = [
     true
   ),
 ];
+
+// console.log(myLibrary);
+let myLibrary = [];
+if(!localStorage.getItem("myLibrary")){
+  myLibrary = localStorage.setItem("myLibrary", JSON.stringify(defaultData));
+} else {  
+  let myLibraryData = JSON.parse(localStorage.getItem("myLibrary"));
+  myLibraryData.forEach(e => {
+
+    // myLibrary.push(new Book({...e}));
+    myLibrary.push(new Book(e.title, e.author, e.genre, e.pages, e.read_pages, e.cover, e.isRead, e.favorite));
+  });
+}
+
+// console.log(myLibrary);
 
 Array.prototype.addBookToLibrary = function (book) {
   this.push(book);
