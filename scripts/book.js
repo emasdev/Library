@@ -27,17 +27,16 @@ export default function Book(
   };
 
   this.createCard = function createCard() {
+    let randomId = Math.floor(Math.random() * (10000 - 10) + 10)
     const toogleHTML = `
     <div class="w-full py-2">
         <label 
-          for="${this.title}-id"
+          for="${this.title}${randomId}-id"
           class="flex items-center cursor-pointer"
         >
          
           <div class="relative">
-            <input id="${
-  this.title
-}-id" type="checkbox" class="toggle-checkbox hidden" ${
+            <input id="${this.title}${randomId}-id" type="checkbox" class="toggle-checkbox hidden" ${
   this.isRead && 'checked'
 }/>
             <div

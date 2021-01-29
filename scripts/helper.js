@@ -1,8 +1,6 @@
 function createBook(book) {
   const card = document.createElement('article');
-
   card.innerHTML = book.createCard();
-
   return card;
 }
 
@@ -24,7 +22,9 @@ export function renderFavoriteInfo(books) {
   });
 }
 
-export function renderBooks(arr, parentElement) {
+export function renderBooks(arr) {
+  let bookTable = document.getElementById('bookTable')
+  bookTable.innerHTML=''
   arr.forEach((book) => {
     const bookCard = createBook(book);
 
@@ -44,7 +44,6 @@ export function renderBooks(arr, parentElement) {
         toogleLabel.innerHTML = 'Not finished';
         readPagesLabel.innerHTML = '0';
       }
-
 
       book.changeStatus(toogle.checked);
 
@@ -70,11 +69,11 @@ export function renderBooks(arr, parentElement) {
     removeBtn.addEventListener('click', () => {
       arr = arr.filter((el) => el !== book);
       document.getElementById('bookTable').innerHTML = '';
-      renderBooks(arr, document.getElementById('bookTable'));
+      renderBooks(arr);
       renderBooksInfo(arr);
       localStorage.setItem('myLibrary', JSON.stringify(arr));
     });
 
-    parentElement.appendChild(bookCard);
+    document.getElementById('bookTable').appendChild(bookCard);
   });
 }

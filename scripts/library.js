@@ -26,7 +26,7 @@ const defaultData = [
   new Book(
     'dddddd',
     'Haruki Murakami',
-    ' Parallel universes in fiction,Fiction',
+    'Parallel universes in fiction,Fiction',
     442,
     0,
     'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSUBVTmWmQDY05iDPuCQSTZDN7EN6Xr_P5jLg&usqp=CAU',

@@ -14,7 +14,6 @@ const readPages = document.getElementById('readPages');
 const cover = document.getElementById('cover');
 const isRead = document.getElementById('isRead');
 
-
 modalAddButton.addEventListener('click', () => {
   const book = new Book(
     title.value,
@@ -22,13 +21,13 @@ modalAddButton.addEventListener('click', () => {
     genre.value,
     pages.value,
     readPages.value,
-    cover.value === '' ? 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSUBVTmWmQDY05iDPuCQSTZDN7EN6Xr_P5jLg&usqp=CAU' : cover.value,
+    cover.value === ''
+      ? 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSUBVTmWmQDY05iDPuCQSTZDN7EN6Xr_P5jLg&usqp=CAU'
+      : cover.value,
     isRead.checked,
   );
-  console.log(book);
   myLibrary.push(book);
-  bookTable.innerHTML = '';
-  renderBooks(myLibrary, bookTable);
+  renderBooks(myLibrary);
   renderBooksInfo(myLibrary);
   renderFavoriteInfo(myLibrary);
   modal.classList.add('hidden');
