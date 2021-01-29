@@ -23,8 +23,8 @@ export function renderFavoriteInfo(books) {
 }
 
 export function renderBooks(arr) {
-  let bookTable = document.getElementById('bookTable')
-  bookTable.innerHTML=''
+  const bookTable = document.getElementById('bookTable');
+  bookTable.innerHTML = '';
   arr.forEach((book) => {
     const bookCard = createBook(book);
 

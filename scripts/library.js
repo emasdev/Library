@@ -1,3 +1,4 @@
+/* eslint-disable no-const-assign */
 import Book from './book.js';
 
 const defaultData = [
@@ -35,7 +36,8 @@ const defaultData = [
   ),
 ];
 
-let myLibrary = [];
+const myLibrary = [];
+
 if (!localStorage.getItem('myLibrary')) {
   localStorage.setItem('myLibrary', JSON.stringify(defaultData));
   myLibrary = defaultData;
