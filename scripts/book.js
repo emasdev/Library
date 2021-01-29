@@ -1,4 +1,4 @@
-export default function Book(title, author, genre, pages,read_pages=0, cover='', isRead=false,favorite=false) {
+export default function Book(title, author, genre, pages,read_pages=0, cover, isRead=false,favorite=false) {
   this.title = title;
   this.author = author;
   this.genre = genre;
@@ -17,10 +17,7 @@ export default function Book(title, author, genre, pages,read_pages=0, cover='',
   }
 
   this.createCard = function () {
-    let defaultImage =
-      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSUBVTmWmQDY05iDPuCQSTZDN7EN6Xr_P5jLg&usqp=CAU";
-    let imgsrc = this.cover.length > 0 ? this.cover : defaultImage;
-
+  
     let toogleHTML = `
     <div class="w-full py-2">
         <label 
@@ -49,7 +46,7 @@ export default function Book(title, author, genre, pages,read_pages=0, cover='',
     let article = `<div class="flex items-center justify-center">
       <div class="max-w-sm w-full py-6 px-3">
         <div class="bg-white shadow-xl rounded-lg overflow-hidden">
-            <div class="bg-cover bg-center h-56 p-4" style="background-image: url(${imgsrc})">
+            <div id='cover' class="bg-cover bg-center h-56 p-4" style="background-image: url(${this.cover})">
             <div class="flex justify-end toggle-favorite">
                 <img src="./img/heart-off.png" class="bg-gray-300 rounded-full toggle-favorite-off">
                 <img src="./img/heart-on.png" class="bg-gray-300 rounded-full hidden toggle-favorite-on">

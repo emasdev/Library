@@ -11,6 +11,7 @@ let author = document.getElementById("author");
 let genre = document.getElementById("genre");
 let pages = document.getElementById("pages");
 let read_pages = document.getElementById("read_pages");
+let cover = document.getElementById("cover");
 let isRead = document.getElementById("isRead");
 
 
@@ -21,9 +22,10 @@ modalAddButton.addEventListener("click", function () {
     genre.value,
     pages.value,
     read_pages.value,
-    cover.value,
+    cover.value === '' ? 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSUBVTmWmQDY05iDPuCQSTZDN7EN6Xr_P5jLg&usqp=CAU' : cover.value,
     isRead.checked
   );
+  console.log(book);
   myLibrary.addBookToLibrary(book);
   bookTable.innerHTML = "";
   renderBooks(myLibrary, bookTable);
