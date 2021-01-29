@@ -27,7 +27,7 @@ modalAddButton.addEventListener("click", function () {
   myLibrary.addBookToLibrary(book);
   bookTable.innerHTML = "";
   renderBooks(myLibrary, bookTable);
-  renderBooksInfo(myLibrary, info);
+  renderBooksInfo(myLibrary);
   modal.classList.add("hidden");
 });
 

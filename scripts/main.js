@@ -13,7 +13,7 @@ const bookTable = document.createElement("div");
 bookTable.id = "bookTable";
 bookTable.classList.add(
   "bg-gray-200",
-  'w-3/4',
+  "w-3/4",
   "pt-20",
   "grid",
   "md:grid-cols-3",
@@ -27,15 +27,31 @@ bookTable.classList.add(
 
 const info = document.createElement("aside");
 info.id = "info";
-info.classList.add("bg-red-400",'fixed','top-0','bottom-0','right-0', "border-l-2", "w-1/4", "pt-20");
-info.innerHTML = "<h3 class='text-center'>Information</h3>";
-info.innerHTML += "<hr>";
-info.innerHTML +=
-  '<div class="flex justify-between px-4 py-2"><p>Books</p><p id="info-total"></p></div>';
-info.innerHTML +=
-  '<div class="flex justify-between px-4 py-2"><p>Completed Books</p><p id="info-finished"></p></div>';
+info.classList.add(
+  'bg-gray-800',
+  'text-gray-400',
+  "fixed",
+  "top-0",
+  "bottom-0",
+  "right-0",
+  "border-l-2",
+  "w-1/4",
+  "pt-16",
+  "px-6",
+);
 
-// -----------------
+info.innerHTML = `
+  <h3 class='text-3xl px-4 text-center py-5 border-b-2 mb-10'>All books</h3>
+  <div class='shadow-2xl mb-6'>
+    <h4 class='text-2xl text-center pb-4'>Information</h4>
+    <div class="flex justify-between px-4 py-2"><p>Books</p><p id="info-total"></p></div>
+    <div class="flex justify-between px-4 py-2"><p>Completed Books</p><p id="info-finished"></p></div>
+  </div>
+  <h4 class='text-2xl text-center pb-2'>Favorite books</h4>
+  <div class='m-auto'>
+    <button class='inline-block px-6 py-2 text-xs font-medium leading-6 text-center text-white uppercase transition bg-red-500 rounded shadow ripple hover:shadow-lg hover:bg-red-600 focus:outline-none'>Delete all books</button>
+  </div>
+`;
 
 library.appendChild(bookTable);
 library.appendChild(info);
@@ -47,7 +63,7 @@ let addBookModal = document.getElementById("add-book-modal");
 /* Render books */
 
 renderBooks(myLibrary, bookTable);
-renderBooksInfo(myLibrary, info);
+renderBooksInfo(myLibrary);
 
 /* Add book to library */
 

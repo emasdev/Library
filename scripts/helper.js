@@ -18,7 +18,6 @@ export function renderBooks(arr, parentElement) {
 
       let finishedBooks = arr.filter((item) => item.isRead).length;
       document.getElementById("info-finished").innerHTML = finishedBooks;
-      // renderBooksInfo(arr, document.getElementsByTagName("aside")[0]);
     });
 
     toogleFavorite.addEventListener("click", () => {
@@ -35,15 +34,14 @@ export function renderBooks(arr, parentElement) {
       arr = arr.removeBookFromLibrary(book);
       document.getElementById("bookTable").innerHTML = "";
       renderBooks(arr, document.getElementById("bookTable"));
-      renderBooksInfo(arr, document.getElementsByTagName("aside")[0]);
+      renderBooksInfo(arr);
     });
 
     parentElement.appendChild(bookCard);
   });
-  console.log(arr);
 }
 
-export function renderBooksInfo(books, domElement) {
+export function renderBooksInfo(books) {
   let finishedBooks = books.filter((item) => item.isRead).length;
   document.getElementById("info-total").innerHTML = books.length;
   document.getElementById("info-finished").innerHTML = finishedBooks;
