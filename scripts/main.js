@@ -13,7 +13,7 @@ const bookTable = document.createElement("div");
 bookTable.id = "bookTable";
 bookTable.classList.add(
   "bg-gray-200",
-  "flex-1",
+  'w-3/4',
   "pt-20",
   "grid",
   "md:grid-cols-3",
@@ -27,7 +27,7 @@ bookTable.classList.add(
 
 const info = document.createElement("aside");
 info.id = "info";
-info.classList.add("bg-red-400", "border-l-2", "w-1/4", "pt-20");
+info.classList.add("bg-red-400",'fixed','top-0','bottom-0','right-0', "border-l-2", "w-1/4", "pt-20");
 info.innerHTML = "<h3 class='text-center'>Information</h3>";
 info.innerHTML += "<hr>";
 info.innerHTML +=
