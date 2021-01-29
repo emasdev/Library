@@ -1,46 +1,46 @@
-import Book from "./book.js";
+import Book from './book.js';
 
-let defaultData = [
+const defaultData = [
   new Book(
-    "Fight club",
-    "Chuck Palahniuk",
-    "psychology",
+    'Fight club',
+    'Chuck Palahniuk',
+    'psychology',
     128,
     0,
-    "https://http2.mlstatic.com/D_NQ_NP_2X_961845-MLM43604844141_092020-F.webp",
+    'https://http2.mlstatic.com/D_NQ_NP_2X_961845-MLM43604844141_092020-F.webp',
     false,
-    false
+    false,
   ),
 
   new Book(
-    "1Q84",
-    "Haruki Murakami",
-    " Parallel universes in fiction,Fiction",
+    '1Q84',
+    'Haruki Murakami',
+    ' Parallel universes in fiction,Fiction',
     442,
     0,
-    "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTBQZSg-b2LFkLlt9fWndS1w8SONabDZBHf0dtdb3-bqcuKxduL",
+    'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTBQZSg-b2LFkLlt9fWndS1w8SONabDZBHf0dtdb3-bqcuKxduL',
     true,
-    true
+    true,
   ),
 
   new Book(
-    "dddddd",
-    "Haruki Murakami",
-    " Parallel universes in fiction,Fiction",
+    'dddddd',
+    'Haruki Murakami',
+    ' Parallel universes in fiction,Fiction',
     442,
     0,
-    "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSUBVTmWmQDY05iDPuCQSTZDN7EN6Xr_P5jLg&usqp=CAU",
+    'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSUBVTmWmQDY05iDPuCQSTZDN7EN6Xr_P5jLg&usqp=CAU',
     true,
-    true
+    true,
   ),
 ];
 
 let myLibrary = [];
-if (!localStorage.getItem("myLibrary")) {
-  localStorage.setItem("myLibrary", JSON.stringify(defaultData));
+if (!localStorage.getItem('myLibrary')) {
+  localStorage.setItem('myLibrary', JSON.stringify(defaultData));
   myLibrary = defaultData;
 } else {
-  let myLibraryData = JSON.parse(localStorage.getItem("myLibrary"));
+  const myLibraryData = JSON.parse(localStorage.getItem('myLibrary'));
   myLibraryData.forEach((e) => {
     myLibrary.push(
       new Book(
@@ -51,18 +51,10 @@ if (!localStorage.getItem("myLibrary")) {
         e.read_pages,
         e.cover,
         e.isRead,
-        e.favorite
-      )
+        e.favorite,
+      ),
     );
   });
 }
-
-Array.prototype.addBookToLibrary = function (book) {
-  this.push(book);
-};
-
-Array.prototype.removeBookFromLibrary = function (book) {
-  return this.filter((el) => el != book);
-};
 
 export default myLibrary;

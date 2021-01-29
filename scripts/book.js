@@ -3,31 +3,31 @@ export default function Book(
   author,
   genre,
   pages,
-  read_pages = 0,
+  readPages = 0,
   cover,
   isRead = false,
-  favorite = false
+  favorite = false,
 ) {
   this.title = title;
   this.author = author;
   this.genre = genre;
   this.pages = pages;
-  this.read_pages = read_pages;
+  this.readPages = readPages;
   this.cover = cover;
   this.isRead = isRead;
   this.favorite = favorite;
 
-  this.changeStatus = function (status) {
+  this.changeStatus = function changeStatus(status) {
     this.isRead = status;
-    this.read_pages = this.pages;
+    this.readPages = this.pages;
   };
 
-  this.isFavorite = function (isFavorite) {
+  this.isFavorite = function isFavorite(isFavorite) {
     this.favorite = isFavorite;
   };
 
-  this.createCard = function () {
-    let toogleHTML = `
+  this.createCard = function createCard() {
+    const toogleHTML = `
     <div class="w-full py-2">
         <label 
           for="${this.title}-id"
@@ -36,10 +36,10 @@ export default function Book(
          
           <div class="relative">
             <input id="${
-              this.title
-            }-id" type="checkbox" class="toggle-checkbox hidden" ${
-      this.isRead && "checked"
-    }/>
+  this.title
+}-id" type="checkbox" class="toggle-checkbox hidden" ${
+  this.isRead && 'checked'
+}/>
             <div
               class="toggle__line w-10 h-4 bg-gray-400 rounded-full shadow-inner"
             ></div>
@@ -50,35 +50,35 @@ export default function Book(
           <div
             class="toggle-status ml-3 text-gray-700 font-medium"
           >
-            ${this.isRead ? "Already read" : "Not finished"}
+            ${this.isRead ? 'Already read' : 'Not finished'}
           </div>
         </label>
     </div>
     `;
 
-    let article = `<div class="flex items-center justify-center">
+    const article = `<div class="flex items-center justify-center">
       <div class="max-w-sm w-full py-6 px-3">
         <div class="bg-white shadow-xl rounded-lg overflow-hidden">
             <div id='cover' class="bg-cover bg-center h-56 p-4" style="background-image: url(${
-              this.cover
-            })">
+  this.cover
+})">
             <div class="flex justify-end toggle-favorite">
                 <img src="./img/heart-off.png" class="bg-gray-300 rounded-full ${
-                  this.favorite && "hidden"
-                } toggle-favorite-off">
+  this.favorite && 'hidden'
+} toggle-favorite-off">
                 <img src="./img/heart-on.png" class="bg-gray-300 rounded-full ${
-                  !this.favorite && "hidden"
-                } toggle-favorite-on">
+  !this.favorite && 'hidden'
+} toggle-favorite-on">
             </div>
             </div>
             <div class="p-4">
                 <p class="uppercase tracking-wide text-sm font-bold text-gray-700">${
-                  this.author
-                }</p>
+  this.author
+}</p>
                 <p class="text-3xl text-gray-900">${this.title}</p>
                 <p class="text-gray-700">Read pages: <span class="read-pages">${
-                  this.isRead ? this.pages : this.read_pages
-                }</span> / ${this.pages}</p>
+  this.isRead ? this.pages : this.readPages
+}</span> / ${this.pages}</p>
             </div>
             <div class="flex p-4 border-t border-gray-300 text-gray-700 h-20">
                 <p>${this.genre}</p>

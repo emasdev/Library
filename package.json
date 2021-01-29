@@ -23,5 +23,11 @@
     "postcss": "^8.2.4",
     "postcss-cli": "^8.3.1",
     "tailwindcss": "^2.0.2"
+  },
+  "devDependencies": {
+    "babel-eslint": "^10.1.0",
+    "eslint": "^6.8.0",
+    "eslint-config-airbnb-base": "^14.1.0",
+    "eslint-plugin-import": "^2.20.2"
   }
 }

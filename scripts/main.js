@@ -1,43 +1,43 @@
-import myLibrary from "./library.js";
-import modal from "./modal.js";
-import { renderBooks, renderBooksInfo, renderFavoriteInfo } from "./helper.js";
+import myLibrary from './library.js';
+import modal from './modal.js';
+import { renderBooks, renderBooksInfo, renderFavoriteInfo } from './helper.js';
 
 /* library */
-const library = document.createElement("div");
-document.getElementsByTagName("body")[0].appendChild(library);
-library.classList.add("flex", "flex-row", "min-h-full");
+const library = document.createElement('div');
+document.getElementsByTagName('body')[0].appendChild(library);
+library.classList.add('flex', 'flex-row', 'min-h-full');
 
 /* book table */
 
-const bookTable = document.createElement("div");
-bookTable.id = "bookTable";
+const bookTable = document.createElement('div');
+bookTable.id = 'bookTable';
 bookTable.classList.add(
-  "bg-gray-200",
-  "w-3/4",
-  "pt-20",
-  "grid",
-  "md:grid-cols-3",
-  "grid-col-2",
-  "row-span-3"
+  'bg-gray-200',
+  'w-3/4',
+  'pt-20',
+  'grid',
+  'md:grid-cols-3',
+  'grid-col-2',
+  'row-span-3',
 );
 
 // ----------
 
 /* aside component */
 
-const info = document.createElement("aside");
-info.id = "info";
+const info = document.createElement('aside');
+info.id = 'info';
 info.classList.add(
-  "bg-gray-800",
-  "text-gray-400",
-  "fixed",
-  "top-0",
-  "bottom-0",
-  "right-0",
-  "border-l-2",
-  "w-1/4",
-  "pt-16",
-  "px-6"
+  'bg-gray-800',
+  'text-gray-400',
+  'fixed',
+  'top-0',
+  'bottom-0',
+  'right-0',
+  'border-l-2',
+  'w-1/4',
+  'pt-16',
+  'px-6',
 );
 
 info.innerHTML = `
@@ -61,10 +61,10 @@ library.appendChild(info);
 // ----------------
 
 /* header */
-let addBookModal = document.getElementById("add-book-modal");
-let showAllBooks = document.getElementById('all_books');
-let showNotFinishBooks = document.getElementById('not_finished');
-let showFinishBooks = document.getElementById('finished');
+const addBookModal = document.getElementById('add-book-modal');
+const showAllBooks = document.getElementById('all_books');
+const showNotFinishBooks = document.getElementById('not_finished');
+const showFinishBooks = document.getElementById('finished');
 
 /* Render books */
 
@@ -74,24 +74,24 @@ renderFavoriteInfo(myLibrary);
 
 /* Add book to library */
 
-addBookModal.addEventListener("click", function (e) {
-  modal.classList.remove("hidden");
+addBookModal.addEventListener('click', () => {
+  modal.classList.remove('hidden');
 });
 
-showNotFinishBooks.addEventListener('click',function(){
-  bookTable.innerHTML=''
-  renderBooks(myLibrary.filter(el=>!el.isRead), bookTable);
-  document.getElementById('category_info').innerHTML='Incomplete books'
+showNotFinishBooks.addEventListener('click', () => {
+  bookTable.innerHTML = '';
+  renderBooks(myLibrary.filter(el => !el.isRead), bookTable);
+  document.getElementById('category_info').innerHTML = 'Incomplete books';
 });
 
-showAllBooks.addEventListener('click',function(){
-  bookTable.innerHTML=''
+showAllBooks.addEventListener('click', () => {
+  bookTable.innerHTML = '';
   renderBooks(myLibrary, bookTable);
-  document.getElementById('category_info').innerHTML='All books'
+  document.getElementById('category_info').innerHTML = 'All books';
 });
 
-showFinishBooks.addEventListener('click',function(){
-  bookTable.innerHTML=''
-  renderBooks(myLibrary.filter(el=>el.isRead), bookTable);
-  document.getElementById('category_info').innerHTML='Finished books'
+showFinishBooks.addEventListener('click', () => {
+  bookTable.innerHTML = '';
+  renderBooks(myLibrary.filter(el => el.isRead), bookTable);
+  document.getElementById('category_info').innerHTML = 'Finished books';
 });
