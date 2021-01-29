@@ -1,6 +1,6 @@
 import myLibrary from "./library.js";
 import modal from "./modal.js";
-import { renderBooks, renderBooksInfo } from "./helper.js";
+import { renderBooks, renderBooksInfo, renderFavoriteInfo } from "./helper.js";
 
 /* library */
 const library = document.createElement("div");
@@ -67,6 +67,7 @@ let addBookModal = document.getElementById("add-book-modal");
 
 renderBooks(myLibrary, bookTable);
 renderBooksInfo(myLibrary);
+renderFavoriteInfo(myLibrary);
 
 /* Add book to library */
 

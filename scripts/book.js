@@ -10,6 +10,7 @@ export default function Book(title, author, genre, pages,read_pages=0, cover, is
 
   this.changeStatus = function(status) {
     this.isRead = status;
+    this.read_pages = this.pages;
   }
 
   this.isFavorite = function(isFavorite){
@@ -48,14 +49,14 @@ export default function Book(title, author, genre, pages,read_pages=0, cover, is
         <div class="bg-white shadow-xl rounded-lg overflow-hidden">
             <div id='cover' class="bg-cover bg-center h-56 p-4" style="background-image: url(${this.cover})">
             <div class="flex justify-end toggle-favorite">
-                <img src="./img/heart-off.png" class="bg-gray-300 rounded-full toggle-favorite-off">
-                <img src="./img/heart-on.png" class="bg-gray-300 rounded-full hidden toggle-favorite-on">
+                <img src="./img/heart-off.png" class="bg-gray-300 rounded-full ${this.favorite && 'hidden'} toggle-favorite-off">
+                <img src="./img/heart-on.png" class="bg-gray-300 rounded-full ${!this.favorite && 'hidden'} toggle-favorite-on">
             </div>
             </div>
             <div class="p-4">
                 <p class="uppercase tracking-wide text-sm font-bold text-gray-700">${this.author}</p>
                 <p class="text-3xl text-gray-900">${this.title}</p>
-                <p class="text-gray-700">Total pages: ${this.pages}</p>
+                <p class="text-gray-700">Read pages: <span class="read-pages">${this.isRead ? this.pages : this.read_pages}</span> / ${this.pages}</p>
             </div>
             <div class="flex p-4 border-t border-gray-300 text-gray-700 h-20">
                 <p>${this.genre}</p>

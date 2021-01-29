@@ -1,6 +1,6 @@
 import myLibrary from './library.js';
 import Book from './book.js';
-import { renderBooks,renderBooksInfo } from "./helper.js";
+import { renderBooks,renderBooksInfo,renderFavoriteInfo } from "./helper.js";
 
 let modal = document.getElementById("modal");
 let modalCancelButton = modal.getElementsByTagName("button")[1];
@@ -30,6 +30,7 @@ modalAddButton.addEventListener("click", function () {
   bookTable.innerHTML = "";
   renderBooks(myLibrary, bookTable);
   renderBooksInfo(myLibrary);
+  renderFavoriteInfo(myLibrary);
   modal.classList.add("hidden");
 });
 

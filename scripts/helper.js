@@ -7,17 +7,20 @@ export function renderBooks(arr, parentElement) {
     let toogle = bookCard.getElementsByClassName("toggle-checkbox")[0];
     let toogleLabel = bookCard.getElementsByClassName("toggle-status")[0];
     let toogleFavorite = bookCard.getElementsByClassName("toggle-favorite")[0];
-    let toogleFavoriteOn = bookCard.getElementsByClassName(
-      "toggle-favorite-on"
-    )[0];
-    let toogleFavoriteOff = bookCard.getElementsByClassName(
-      "toggle-favorite-off"
-    )[0];
+    let toogleFavoriteOn = bookCard.getElementsByClassName("toggle-favorite-on")[0];
+    let toogleFavoriteOff = bookCard.getElementsByClassName("toggle-favorite-off")[0];
+    let readPagesLabel = bookCard.getElementsByClassName("read-pages")[0];
 
     toogle.addEventListener("change", () => {
-      toogle.checked
-        ? (toogleLabel.innerHTML = "Already read")
-        : (toogleLabel.innerHTML = "Not finished");
+      if(toogle.checked){
+        toogleLabel.innerHTML = "Already read";
+        readPagesLabel.innerHTML = book.pages;
+      } else {
+        toogleLabel.innerHTML = "Not finished";
+        readPagesLabel.innerHTML = "0";
+      }
+
+
       book.changeStatus(toogle.checked);
 
       let finishedBooks = arr.filter((item) => item.isRead).length;
