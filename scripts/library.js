@@ -25,9 +25,9 @@ const defaultData = [
   ),
 
   new Book(
-    'dddddd',
-    'Haruki Murakami',
-    'Parallel universes in fiction,Fiction',
+    'Tales Of Power',
+    'Carlos Castaneda',
+    'Philosophy',
     442,
     0,
     'https://images-na.ssl-images-amazon.com/images/I/51hyItMiC8L._SX329_BO1,204,203,200_.jpg',
