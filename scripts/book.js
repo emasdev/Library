@@ -60,7 +60,7 @@ export default function Book(
     const article = `<div class="flex items-center justify-center">
       <div class="max-w-sm w-full py-6 px-3">
         <div class="bg-white shadow-xl rounded-lg overflow-hidden">
-            <div id='cover' class="bg-cover bg-center h-56 p-4" style="background-image: url(${
+            <div id='cover' class="bg-cover bg-no-repeat bg-center h-56 p-4" style="background-image: url(${
   this.cover
 })">
             <div class="flex justify-end toggle-favorite">

@@ -1,43 +1,43 @@
-import myLibrary from './library.js';
-import modal from './modal.js';
-import { renderBooks, renderBooksInfo, renderFavoriteInfo } from './helper.js';
+import myLibrary from "./library.js";
+import modal from "./modal.js";
+import { renderBooks, renderBooksInfo, renderFavoriteInfo } from "./helper.js";
 
 /* library */
-const library = document.createElement('div');
-document.getElementsByTagName('body')[0].appendChild(library);
-library.classList.add('flex', 'flex-row', 'min-h-full');
+const library = document.createElement("div");
+document.getElementsByTagName("body")[0].appendChild(library);
+library.classList.add("flex", "flex-row", "min-h-full");
 
 /* book table */
 
-const bookTable = document.createElement('div');
-bookTable.id = 'bookTable';
+const bookTable = document.createElement("div");
+bookTable.id = "bookTable";
 bookTable.classList.add(
-  'bg-gray-200',
-  'w-3/4',
-  'pt-20',
-  'grid',
-  'md:grid-cols-3',
-  'grid-col-2',
-  'row-span-3',
+  "bg-gray-200",
+  "w-3/4",
+  "pt-20",
+  "grid",
+  "md:grid-cols-3",
+  "grid-col-2",
+  "row-span-3"
 );
 
 // ----------
 
 /* aside component */
 
-const info = document.createElement('aside');
-info.id = 'info';
+const info = document.createElement("aside");
+info.id = "info";
 info.classList.add(
-  'bg-gray-800',
-  'text-gray-400',
-  'fixed',
-  'top-0',
-  'bottom-0',
-  'right-0',
-  'border-l-2',
-  'w-1/4',
-  'pt-16',
-  'px-6',
+  "bg-gray-800",
+  "text-gray-400",
+  "fixed",
+  "top-0",
+  "bottom-0",
+  "right-0",
+  "border-l-2",
+  "w-1/4",
+  "pt-16",
+  "px-6"
 );
 
 info.innerHTML = `
@@ -52,7 +52,9 @@ info.innerHTML = `
   <ol id='favorite_list' class='px-4 shadow-2xl'></ol>
 
   <div class='absolute flex justify-center left-0 right-0 bottom-0 mb-10'>
-    <button class='inline-block px-6 py-2 text-xs font-medium leading-6 text-center text-white uppercase transition bg-red-500 rounded shadow ripple hover:shadow-lg hover:bg-red-600 focus:outline-none'>Delete all books</button>
+    <button id='deleteAllBooks' class='inline-block px-6 py-2 text-xs font-medium leading-6 text-center text-white uppercase transition bg-red-500 rounded shadow ripple hover:shadow-lg hover:bg-red-600 focus:outline-none'>
+       Delete all books
+    </button>
   </div>
 `;
 
@@ -61,37 +63,47 @@ library.appendChild(info);
 // ----------------
 
 /* header */
-const addBookModal = document.getElementById('add-book-modal');
-const showAllBooks = document.getElementById('all_books');
-const showNotFinishBooks = document.getElementById('not_finished');
-const showFinishBooks = document.getElementById('finished');
+const addBookModal = document.getElementById("add-book-modal");
+const showAllBooks = document.getElementById("all_books");
+const showNotFinishBooks = document.getElementById("not_finished");
+const showFinishBooks = document.getElementById("finished");
 
 /* Render books */
 
-renderBooks(myLibrary);
-renderBooksInfo(myLibrary);
-renderFavoriteInfo(myLibrary);
+function runApp() {
+  console.log(myLibrary);
+  renderBooks(myLibrary);
+  renderBooksInfo(myLibrary);
+  renderFavoriteInfo(myLibrary);
+}
 
+runApp()
 /* Add book to library */
 
-addBookModal.addEventListener('click', () => {
-  modal.classList.remove('hidden');
+addBookModal.addEventListener("click", () => {
+  modal.classList.remove("hidden");
 });
 
-showNotFinishBooks.addEventListener('click', () => {
-  bookTable.innerHTML = '';
+showNotFinishBooks.addEventListener("click", () => {
+  bookTable.innerHTML = "";
   renderBooks(myLibrary.filter((el) => !el.isRead));
-  document.getElementById('category_info').innerHTML = 'Incomplete books';
+  document.getElementById("category_info").innerHTML = "Incomplete books";
 });
 
-showAllBooks.addEventListener('click', () => {
-  bookTable.innerHTML = '';
+showAllBooks.addEventListener("click", () => {
+  bookTable.innerHTML = "";
   renderBooks(myLibrary);
-  document.getElementById('category_info').innerHTML = 'All books';
+  document.getElementById("category_info").innerHTML = "All books";
 });
 
-showFinishBooks.addEventListener('click', () => {
-  bookTable.innerHTML = '';
+showFinishBooks.addEventListener("click", () => {
+  bookTable.innerHTML = "";
   renderBooks(myLibrary.filter((el) => el.isRead));
-  document.getElementById('category_info').innerHTML = 'Finished books';
+  document.getElementById("category_info").innerHTML = "Finished books";
+});
+
+document.getElementById("deleteAllBooks").addEventListener("click", () => {
+  localStorage.removeItem("myLibrary");
+  myLibrary.length=0;
+  runApp();
 });
