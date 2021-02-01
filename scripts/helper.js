@@ -1,12 +1,13 @@
 import Book from './book.js';
+
 function createBook(book) {
   const card = document.createElement('article');
   card.innerHTML = book.createCard();
   return card;
 }
 
-export function getLibraryFromLocalStorage(){
-  let myLibrary = [];
+export function getLibraryFromLocalStorage() {
+  const myLibrary = [];
   JSON.parse(localStorage.getItem('myLibrary')).forEach((e) => {
     myLibrary.push(
       new Book(
@@ -21,7 +22,7 @@ export function getLibraryFromLocalStorage(){
       ),
     );
   });
-  return myLibrary
+  return myLibrary;
 }
 
 export function renderBooksInfo(books) {
@@ -87,7 +88,6 @@ export function renderBooks(arr) {
     });
 
     removeBtn.addEventListener('click', () => {
-
       arr = arr.filter((el) => el !== book);
       document.getElementById('bookTable').innerHTML = '';
       renderBooks(arr);

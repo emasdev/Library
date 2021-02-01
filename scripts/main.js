@@ -1,6 +1,8 @@
 import myLibrary from './library.js';
 import modal from './modal.js';
-import { renderBooks, renderBooksInfo, renderFavoriteInfo, getLibraryFromLocalStorage } from './helper.js';
+import {
+  renderBooks, renderBooksInfo, renderFavoriteInfo, getLibraryFromLocalStorage,
+} from './helper.js';
 
 /* library */
 const library = document.createElement('div');
