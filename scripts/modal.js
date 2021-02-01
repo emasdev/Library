@@ -1,6 +1,5 @@
-import myLibrary from './library.js';
 import Book from './book.js';
-import { renderBooks, renderBooksInfo, renderFavoriteInfo } from './helper.js';
+import { getLibraryFromLocalStorage, renderBooks, renderBooksInfo, renderFavoriteInfo } from './helper.js';
 
 const modal = document.getElementById('modal');
 const modalCancelButton = modal.getElementsByTagName('button')[1];
@@ -26,6 +25,7 @@ modalAddButton.addEventListener('click', () => {
       : cover.value,
     isRead.checked,
   );
+  let myLibrary = getLibraryFromLocalStorage();
   myLibrary.push(book);
   renderBooks(myLibrary);
   renderBooksInfo(myLibrary);

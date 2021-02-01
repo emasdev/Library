@@ -1,7 +1,27 @@
+import Book from './book.js';
 function createBook(book) {
   const card = document.createElement('article');
   card.innerHTML = book.createCard();
   return card;
+}
+
+export function getLibraryFromLocalStorage(){
+  let myLibrary = [];
+  JSON.parse(localStorage.getItem('myLibrary')).forEach((e) => {
+    myLibrary.push(
+      new Book(
+        e.title,
+        e.author,
+        e.genre,
+        e.pages,
+        e.read_pages,
+        e.cover,
+        e.isRead,
+        e.favorite,
+      ),
+    );
+  });
+  return myLibrary
 }
 
 export function renderBooksInfo(books) {
@@ -67,6 +87,7 @@ export function renderBooks(arr) {
     });
 
     removeBtn.addEventListener('click', () => {
+
       arr = arr.filter((el) => el !== book);
       document.getElementById('bookTable').innerHTML = '';
       renderBooks(arr);

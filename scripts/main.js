@@ -1,6 +1,6 @@
 import myLibrary from './library.js';
 import modal from './modal.js';
-import { renderBooks, renderBooksInfo, renderFavoriteInfo } from './helper.js';
+import { renderBooks, renderBooksInfo, renderFavoriteInfo, getLibraryFromLocalStorage } from './helper.js';
 
 /* library */
 const library = document.createElement('div');
@@ -76,6 +76,7 @@ function runApp() {
   renderFavoriteInfo(myLibrary);
 }
 
+
 runApp();
 /* Add book to library */
 
@@ -85,19 +86,20 @@ addBookModal.addEventListener('click', () => {
 
 showNotFinishBooks.addEventListener('click', () => {
   bookTable.innerHTML = '';
-  renderBooks(myLibrary.filter((el) => !el.isRead));
+
+  renderBooks(getLibraryFromLocalStorage().filter((el) => !el.isRead));
   document.getElementById('category_info').innerHTML = 'Incomplete books';
 });
 
 showAllBooks.addEventListener('click', () => {
   bookTable.innerHTML = '';
-  renderBooks(myLibrary);
+  renderBooks(getLibraryFromLocalStorage());
   document.getElementById('category_info').innerHTML = 'All books';
 });
 
 showFinishBooks.addEventListener('click', () => {
   bookTable.innerHTML = '';
-  renderBooks(myLibrary.filter((el) => el.isRead));
+  renderBooks(getLibraryFromLocalStorage().filter((el) => el.isRead));
   document.getElementById('category_info').innerHTML = 'Finished books';
 });
 

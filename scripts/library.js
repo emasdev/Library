@@ -1,5 +1,6 @@
 /* eslint-disable no-const-assign */
 import Book from './book.js';
+import { getLibraryFromLocalStorage } from './helper.js';
 
 const defaultData = [
   new Book(
@@ -36,7 +37,7 @@ const defaultData = [
   ),
 ];
 
-const myLibrary = [];
+let myLibrary = [];
 
 if (!localStorage.getItem('myLibrary')) {
   localStorage.setItem('myLibrary', JSON.stringify(defaultData));
@@ -44,20 +45,8 @@ if (!localStorage.getItem('myLibrary')) {
     myLibrary.push(e);
   });
 } else {
-  JSON.parse(localStorage.getItem('myLibrary')).forEach((e) => {
-    myLibrary.push(
-      new Book(
-        e.title,
-        e.author,
-        e.genre,
-        e.pages,
-        e.read_pages,
-        e.cover,
-        e.isRead,
-        e.favorite,
-      ),
-    );
-  });
+  myLibrary = getLibraryFromLocalStorage();
 }
+
 
 export default myLibrary;
